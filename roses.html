@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="8th March Card">
+    <meta name="author" content="Max Shishkin">
+    <title>8th March Card</title>
+    <style type="text/css">
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .clearfix {
+        clear: both;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+
+      h1 {
+        margin: 20px 0px 40px 0px;
+      }
+
+      p {
+        margin: 0 0px 20px 0px;
+      }
+
+      #wrap {
+        width: 1000px;
+        margin: 100px auto;
+        position: relative;
+      }
+
+      #roses {
+        position: relative;
+        float: left;
+        width: 500px;
+        height: 500px;
+      }
+
+      #msg {
+        width: 500px;
+        float: left;
+        padding-top: 100px;
+      }
+
+      .rose {
+        width: 500px;
+        height: 120px;
+        font-size: 120px;
+        line-height: 120px;
+        margin-top: 190px;
+        position: absolute;
+        cursor: default;
+      }
+
+      .rose .bud {
+        font-size: 150px;
+        color: rgb(247, 32, 32);
+        display: inline-block;
+        position: relative;
+        bottom: -23px;
+      }
+
+      .rose .stem {
+        color: rgb(59, 196, 61);
+      }
+
+      #roses .rose:nth-child(1) {
+        -webkit-transform: rotate(60deg);
+        -moz-transform: rotate(60deg);
+        -o-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+        left: -41px;
+        top: -6px;
+      }
+
+      #roses .rose:nth-child(2) {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        left: 12px;
+      }
+
+      #roses .rose:nth-child(3) {
+        -webkit-transform: rotate(117deg);
+        -moz-transform: rotate(117deg);
+        -o-transform: rotate(117deg);
+        -ms-transform: rotate(117deg);
+        left: 61px;
+        top: 5px;
+      }
+
+      .smile {
+        display: inline-block;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(117deg);
+        -o-transform: rotate(117deg);
+        -ms-transform: rotate(117deg);
+      }
+
+      .tlc {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: 100px solid rgba(0, 0, 0, 0.5);
+        border-right: 100px solid transparent;
+      }
+
+      .trc {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        border-top: 50px solid rgba(0, 0, 0, 0.5);
+        border-left: 50px solid transparent;
+      }
+
+      .blc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+
+        border-bottom: 50px solid rgba(0, 0, 0, 0.5);
+        border-right: 50px solid transparent;
+      }
+
+      .brc {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 50px solid rgba(0, 0, 0, 0.5);
+        border-left: 50px solid transparent;
+      }
+
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div id="wrap">
+
+      <div class="brc"> </div>
+
+      <div id="roses">
+        <div class="rose">
+          <span class="bud">@</span><span class="stem">}-,-,</span>
+        </div>
+
+        <div class="rose">
+          <span class="bud">@</span><span class="stem">}-----~</span>
+        </div>
+
+        <div class="rose">
+          <span class="bud">@</span><span class="stem">}`-`-</span>
+        </div>
+      </div>
+
+      <div id="msg">
+        <h1>8th March Card</h1>
+
+        <p>Your congrats go here.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <span class="smile">=P</span></p>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
+    <script type="text/javascript">
+      (function(){
+
+        jQuery.fn.budShake = function(callback) {
+          return this.animate({
+                    "bottom" : "-=7"
+                  },200)
+                  .animate({
+                    "bottom" : "+=14"
+                  },100)
+                  .animate({
+                    "bottom" : "-=11"
+                  },200)
+                  .animate({
+                    "bottom" : "+=8"
+                  },150)
+                  .animate({
+                    "bottom" : "-=4"
+                  },100, callback);
+        };
+
+        $("#roses").on("mouseenter", ".rose", function(){
+          var bud = $(this).children(".bud").not(".animated").addClass("animated");
+          bud.budShake(function(){
+              bud.removeClass("animated");
+          });
+        });
+
+      })();
+    </script>
+  </body>
+</html>
